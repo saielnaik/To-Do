@@ -8,14 +8,23 @@ export default function Tasks({ bgColor, title, description, indexNumber, todo, 
     setTask(finalData);
   }
 
+  const chColor = (colour) => {
+    if(colour === color){
+        setColor("bg-red-500");
+    }else{
+        setColor(colour);
+    }
+    
+  }
+
   return (
-    <div className={`p-4 rounded-lg shadow-md ${color} `}>
+    <div className={`p-4 rounded-lg shadow-md ${color} `} onClick={() => chColor("bg-green-500")}>
         <div className='flex justify-between items-start'>
             <div>
                 <h2 className="text-xl font-bold">{title}</h2>
                 <p className="text-gray-700">{description}</p>
             </div>
-            <div className="">
+            {/* <div className="">
                 <div>
                 <button onClick={() => setColor("bg-green-500")}>
                 <svg
@@ -42,7 +51,7 @@ export default function Tasks({ bgColor, title, description, indexNumber, todo, 
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
                 </button>
-            </div>
+            </div> */}
       </div>
       <button className='w-full bg-red-400 rounded-lg text-center mt-2 p-1 hover:bg-red-500 text-white' onClick={deleteTask}>Delete</button>
     </div>

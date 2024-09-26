@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import Tasks from './Tasks';
 
-
 function App() {
   const d = new Date();
   const options = { weekday: 'long', day: 'numeric', month: 'long' };
@@ -10,23 +9,24 @@ function App() {
   
   const [task, setTask] = useState([]); 
 
-  const getRandomBgColor = () => {const colors = [
-    'bg-blue-300',
-    'bg-green-300',
-    'bg-red-300',
-    'bg-yellow-300',
-    'bg-purple-300',
-    'bg-pink-300',       
-    'bg-teal-300',       
-    'bg-indigo-300',     
-    'bg-orange-300',    
-    'bg-gray-300',       
-    'bg-emerald-300',   
-    'bg-lime-300',      
-    'bg-sky-300',       
-    'bg-fuchsia-300',   
-    'bg-rose-300',      
-  ];
+  const getRandomBgColor = () => {
+    const colors = [
+      'bg-blue-300',
+      'bg-green-300',
+      'bg-red-300',
+      'bg-yellow-300',
+      'bg-purple-300',
+      'bg-pink-300',       
+      'bg-teal-300',       
+      'bg-indigo-300',     
+      'bg-orange-300',    
+      'bg-gray-300',       
+      'bg-emerald-300',   
+      'bg-lime-300',      
+      'bg-sky-300',       
+      'bg-fuchsia-300',   
+      'bg-rose-300',      
+    ];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
@@ -48,8 +48,8 @@ function App() {
 
   return (
     <div>
-      <div className="bg-slate-100 font-mono lg:ml-[10%] lg:mr-[10%] ml-[2%] mr-[2%] ">
-        <div className='p-[5%]'>
+      <div className="bg-slate-100 font-mono lg:ml-[10%] lg:mr-[10%] ml-[2%] mr-[2%] min-h-screen flex flex-col">
+        <div className='p-[5%] flex-grow'>
           <h1 className="text-5xl font-semibold mb-4">Today's <span className="text-blue-500">Task</span></h1>
           <p className='text-slate-500 mb-10 text-2xl'>{formattedDate}</p>
           <form onSubmit={addTask}>
